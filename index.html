@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <noscript>
+        <style>
+            .fade-up { opacity: 1 !important; transform: translateY(0) !important; }
+        </style>
+    </noscript>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -36,63 +41,97 @@
     <main>
         <!-- Hero Section -->
         <section class="hero section" id="home">
+            <div class="hero-glow"></div>
             <div class="container hero-container">
-                <div class="hero-content">
+                <div class="hero-content fade-in">
                     <h2 class="hero-subtitle">Hi, I'm</h2>
                     <h1 class="hero-title">Sayyed Arslaan</h1>
                     <h3 class="hero-profession">Full Stack Developer</h3>
-                    <p class="hero-tagline">Building scalable, high-performance web applications from front to back.</p>
+                    <p class="hero-intro">I craft responsive web applications and modern digital experiences focused on performance, usability, and professional design.</p>
+                    <p class="hero-tagline">“Building modern, scalable, and high-performance digital experiences with clean code and elegant design.”</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Sayyed-Arslaan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sayyedarslaan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://instagram.com/sayyed_arslaaaaan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="about section" id="about">
+        <section class="about section fade-up" id="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
                     <p class="about-text">
-                        I am a passionate and detail-oriented Full Stack Developer with a strong foundation in modern web technologies. I specialize in bridging the gap between complex backend logic and intuitive, user-friendly frontend interfaces. By combining my technical expertise with a problem-solving mindset, I create scalable digital solutions that not only meet business objectives but also deliver exceptional user experiences.
+                        I am a passionate Full Stack Developer focused on building clean, scalable, and user-friendly digital solutions. I combine frontend creativity with backend logic to create modern web experiences that are fast, responsive, and impactful.
                     </p>
-                    <p class="about-text">
-                        Whether it's designing robust APIs in Python or crafting responsive layouts with CSS and JavaScript, I am committed to writing clean, maintainable code. My unique blend of development skills and analytical capabilities with tools like Excel allows me to approach problems holistically.
-                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h4 class="stat-title">Projects Completed</h4>
+                            <p class="stat-desc">Delivering end-to-end solutions</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="stat-title">Technologies Used</h4>
+                            <p class="stat-desc">Modern stack development</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="stat-title">Continuous Learning</h4>
+                            <p class="stat-desc">Adapting to new trends</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="stat-title">Problem Solving Focus</h4>
+                            <p class="stat-desc">Analytical and structured approach</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section class="skills section" id="skills">
+        <section class="skills section fade-up" id="skills">
             <div class="container">
                 <h2 class="section-title">Skills & Expertise</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3 class="skill-category-title">Development</h3>
+                        <h3 class="skill-category-title">Frontend</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">HTML5</li>
+                            <li class="skill-item">CSS3</li>
+                            <li class="skill-item">JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Backend</h3>
                         <ul class="skill-list">
                             <li class="skill-item">Python</li>
-                            <li class="skill-item">JavaScript</li>
-                            <li class="skill-item">CSS3</li>
-                            <li class="skill-item">HTML5</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3 class="skill-category-title">Data & Analysis</h3>
+                        <h3 class="skill-category-title">Tools & Productivity</h3>
                         <ul class="skill-list">
-                            <li class="skill-item">Excel</li>
+                            <li class="skill-item">MS Excel</li>
                             <li class="skill-item">Google Sheets</li>
-                            <li class="skill-item">Data Processing</li>
+                            <li class="skill-item">MS Word</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3 class="skill-category-title">Professional</h3>
+                        <h3 class="skill-category-title">Additional Skills</h3>
                         <ul class="skill-list">
-                            <li class="skill-item">Problem Solving</li>
-                            <li class="skill-item">Full Stack Architecture</li>
                             <li class="skill-item">Responsive Design</li>
+                            <li class="skill-item">UI/UX Understanding</li>
+                            <li class="skill-item">Data Analysis</li>
                         </ul>
                     </div>
                 </div>
@@ -100,19 +139,20 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="projects section" id="projects">
+        <section class="projects section fade-up" id="projects">
             <div class="container">
                 <h2 class="section-title">Selected Works</h2>
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <article class="project-card">
+                        <div class="project-image-placeholder"></div>
                         <div class="project-content">
-                            <h3 class="project-title">E-Commerce Web Application</h3>
-                            <p class="project-description">A fully functional e-commerce platform featuring product management, user authentication, and secure checkout processes.</p>
+                            <h3 class="project-title">Modern Portfolio Website</h3>
+                            <p class="project-description">A premium responsive portfolio focused on clean branding and modern UI design.</p>
                             <div class="project-tech">
-                                <span>Python</span>
-                                <span>JavaScript</span>
+                                <span>HTML</span>
                                 <span>CSS</span>
+                                <span>JavaScript</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-link">View Live &rarr;</a>
@@ -122,13 +162,14 @@
                     </article>
                     <!-- Project 2 -->
                     <article class="project-card">
+                        <div class="project-image-placeholder"></div>
                         <div class="project-content">
                             <h3 class="project-title">Data Analytics Dashboard</h3>
-                            <p class="project-description">An interactive dashboard built to process, analyze, and visualize complex datasets directly from Excel and Sheets.</p>
+                            <p class="project-description">An interactive dashboard for analyzing and visualizing structured datasets.</p>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Excel</span>
-                                <span>Data Viz</span>
+                                <span>Google Sheets</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-link">View Live &rarr;</a>
@@ -138,9 +179,28 @@
                     </article>
                     <!-- Project 3 -->
                     <article class="project-card">
+                        <div class="project-image-placeholder"></div>
                         <div class="project-content">
-                            <h3 class="project-title">Portfolio Website</h3>
-                            <p class="project-description">A premium, minimalist portfolio website designed to showcase professional experience, skills, and selected projects.</p>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">A scalable e-commerce web application with responsive UI and secure functionality.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Live &rarr;</a>
+                                <a href="#" class="project-link">Source Code &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <div class="project-image-placeholder"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Business Landing Page</h3>
+                            <p class="project-description">A modern high-converting responsive business website with clean UI.</p>
                             <div class="project-tech">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -157,7 +217,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section class="experience section" id="experience">
+        <section class="experience section fade-up" id="experience">
             <div class="container">
                 <h2 class="section-title">Experience</h2>
                 <div class="experience-timeline">
@@ -167,39 +227,22 @@
                             <h3 class="experience-role">Freelance Full Stack Developer</h3>
                             <span class="experience-date">2023 - Present</span>
                         </div>
-                        <h4 class="experience-company">Self-Employed</h4>
-                        <p class="experience-description">Developing custom web solutions for diverse clients, managing projects from initial concept through deployment. Focused on delivering high-performance, responsive applications.</p>
+                        <p class="experience-description">Developing responsive and performance-driven web applications while focusing on clean UI, scalability, and modern frontend experiences.</p>
                     </div>
                     <!-- Experience 2 -->
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 class="experience-role">Web Development Intern</h3>
-                            <span class="experience-date">2022 - 2023</span>
+                            <h3 class="experience-role">Web Development Learning Journey</h3>
+                            <span class="experience-date">2022 - Present</span>
                         </div>
-                        <h4 class="experience-company">Tech Solutions Inc.</h4>
-                        <p class="experience-description">Assisted in the development and maintenance of corporate web applications. Collaborated with senior developers to optimize database queries and refine user interfaces.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials section" id="testimonials">
-            <div class="container">
-                <h2 class="section-title">Client Feedback</h2>
-                <div class="testimonials-grid">
-                    <!-- Placeholder for future testimonials -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Sayyed delivered an exceptional web application that exceeded our expectations. His attention to detail and technical proficiency are truly commendable."</p>
-                        <h4 class="testimonial-author">- Placeholder Client</h4>
-                        <span class="testimonial-role">Project Manager</span>
+                        <p class="experience-description">Continuously learning and improving modern development technologies, responsive design systems, and scalable application architecture.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="contact section" id="contact">
+        <section class="contact section fade-up" id="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-container">
@@ -217,9 +260,9 @@
                         </div>
 
                         <div class="social-links">
-                            <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
-                            <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                            <a href="https://github.com/Sayyed-Arslaan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">GitHub</a>
+                            <a href="https://www.linkedin.com/in/sayyedarslaan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="https://instagram.com/sayyed_arslaaaaan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">Instagram</a>
                         </div>
                     </div>
 
@@ -254,6 +297,11 @@
                 <a href="#about" class="footer-link">About</a>
                 <a href="#projects" class="footer-link">Projects</a>
                 <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/Sayyed-Arslaan" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/sayyedarslaan" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://instagram.com/sayyed_arslaaaaan" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">Instagram</a>
             </div>
             <p class="footer-copyright">&copy; <span id="current-year"></span> Sayyed Arslaan. All rights reserved.</p>
         </div>
