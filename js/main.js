@@ -97,4 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Entrance Animations (Intersection Observer)
+    const fadeUpElements = document.querySelectorAll('.fade-up');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Trigger when 15% of element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once animated
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    fadeUpElements.forEach(element => {
+        observer.observe(element);
+    });
 });
