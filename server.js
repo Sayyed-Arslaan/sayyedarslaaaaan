@@ -41,7 +41,7 @@ app.post('/api/contact', async (req, res) => {
 
         const response = await fetch(googleScriptUrl, {
             method: 'POST',
-            body: formData,
+            body: formData.toString(),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
