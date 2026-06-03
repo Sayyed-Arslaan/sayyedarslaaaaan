@@ -126,8 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formMessages = document.getElementById('formMessages');
     const submitButton = document.getElementById('submitButton');
 
-    // Replace with actual Google Apps Script Web App URL when available
-    const scriptURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL';
+    const scriptURL = '/api/contact';
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -159,31 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Sending...';
 
             try {
-                // Prepare form data
-                const formData = new FormData();
-                formData.append('name', name);
-                formData.append('email', email);
-                formData.append('message', message);
-                formData.append('sourcePage', 'Portfolio Website');
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message, sourcePage: 'Portfolio Website' })
+                });
 
-                // If testing locally and URL is placeholder, mock success
-                if (scriptURL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
-                    console.log('Mocking submission. Data:', {name, email, message, sourcePage: 'Portfolio Website'});
-                    await new Promise(resolve => setTimeout(resolve, 1000)); // simulate delay
-                    showMessage('success', 'Message sent successfully! (Mocked)');
+                if (response.ok) {
+                    showMessage('success', 'Message sent successfully!');
                     contactForm.reset();
                 } else {
-                    const response = await fetch(scriptURL, {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    if (response.ok) {
-                        showMessage('success', 'Message sent successfully!');
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Network response was not ok.');
-                    }
+                    throw new Error('Network response was not ok.');
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
