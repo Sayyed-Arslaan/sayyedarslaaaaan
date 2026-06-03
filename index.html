@@ -267,20 +267,21 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" onsubmit="event.preventDefault();">
+                    <form class="contact-form" id="contactForm">
+                        <div id="formMessages" class="form-messages"></div>
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-input form-textarea" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <button type="submit" id="submitButton" class="btn btn-primary btn-block">Send Message</button>
                     </form>
                 </div>
             </div>
