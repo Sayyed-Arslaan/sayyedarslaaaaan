@@ -376,21 +376,61 @@ noscript .fade-up {
 /* ==========================================================================
    About Section
    ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-normal);
+}
+
+.about-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
 .about-content {
     max-width: 100%;
 }
 
+.about-subtitle {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-main);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
 .about-text {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     line-height: 1.8;
-    max-width: 800px;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .about-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-sm);
+    margin-top: var(--space-md);
 }
 
 .stat-card {
