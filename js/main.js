@@ -41,30 +41,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.addEventListener('scroll', scrollHeader);
-    // Trigger once on load
-    scrollHeader();
+    // scrollHeader now handled in batched rAF onScroll handler
+
+
+    let isScrolling = false;
+
+    // Cache the sections to avoid repeated DOM queries and layout reads
+    // which cause layout thrashing
+    const sectionData = [];
+
+    function cacheSectionData() {
+        sectionData.length = 0; // clear
+        sections.forEach(current => {
+            sectionData.push({
+                id: current.getAttribute('id'),
+                height: current.offsetHeight,
+                top: current.offsetTop - 100,
+                // cache the DOM element to avoid repeated querySelector
+                link: document.querySelector(`.nav-menu a[href*=${current.getAttribute('id')}]`)
+            });
+        });
+    }
+
+    // Cache initially and on resize
+    cacheSectionData();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        // debounce resize to avoid excessive calculations
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(cacheSectionData, 250);
+    });
 
     function scrollActive() {
         const scrollY = window.pageYOffset;
 
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100; // Offset for header
-            const sectionId = current.getAttribute('id');
-            const activeLink = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
-
-            if(activeLink) {
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    activeLink.classList.add('active');
+        sectionData.forEach(data => {
+            if(data.link) {
+                if (scrollY > data.top && scrollY <= data.top + data.height) {
+                    data.link.classList.add('active');
                 } else {
-                    activeLink.classList.remove('active');
+                    data.link.classList.remove('active');
                 }
             }
         });
     }
-    window.addEventListener('scroll', scrollActive);
+
+    function onScroll() {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                scrollHeader();
+                scrollActive();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    }
+
+    window.removeEventListener('scroll', scrollHeader);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     // Trigger once on load
+    scrollHeader();
     scrollActive();
 
     // 3. Set Current Year in Footer
